@@ -35,10 +35,8 @@ build/
 backend/firebaseServiceAccount.json
 
 firebaseServiceAccount.json
-firebaseAdmin.js
 config/google-services.json
 firebaseServiceAccount.json
-firebaseAdmin.js
 config/google-services.json
 
 
