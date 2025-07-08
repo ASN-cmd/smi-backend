@@ -120,6 +120,9 @@ app.get('/health', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.send('🚀 SMI Backend is running on Render!');
+});
 // Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
