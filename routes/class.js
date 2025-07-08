@@ -33,7 +33,9 @@ router.get('/list', async (req, res) => {
         }));
         res.json(classes);
     } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch classes' });
+        // Add this line for detailed logging
+        console.error('Error fetching classes:', error, error.stack);
+        res.status(500).json({ error: 'Failed to fetch classes', details: error.message });
     }
 })
 
