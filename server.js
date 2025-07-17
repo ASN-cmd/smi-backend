@@ -7,6 +7,7 @@ import contentAssessmentRoutes from './routes/contentAssessment.js';
 import DailyActivityService from './models/DailyActivity.js';
 import admin from './firebaseAdmin.js';
 import classRoutes from './routes/class.js';
+import emergencyRoutes from './routes/emergency.js';
 
 dotenv.config();
 const app = express();
@@ -25,6 +26,7 @@ app.use('/api/module/mood', moodRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/content-assessment', contentAssessmentRoutes);
 app.use('/api/class', classRoutes);
+app.use('/api/emergency', emergencyRoutes);
 
 // Middleware to verify Firebase token
 const verifyFirebaseToken = async (req, res, next) => {
@@ -120,9 +122,6 @@ app.get('/health', (req, res) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.send('🚀 SMI Backend is running on Render!');
-});
 // Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
